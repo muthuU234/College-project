@@ -22,7 +22,6 @@ public class loginmodel {
 
 	private String name;
 
-	// Constructors
 	public loginmodel() {
 	}
 
