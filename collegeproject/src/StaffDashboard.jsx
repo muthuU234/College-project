@@ -211,8 +211,9 @@ const StaffDashboard=()=>{
   </nav>
 
   <aside>
+    <div onClick={()=>nav('task')}>Task</div>
     <div onClick={() => nav('addstudent')}>Add Student</div>    
-    <div onClick={()=>nav('')}>Analysis</div>
+    <div onClick={()=>nav('analysis')}>Analysis</div>
     <div onClick={()=>nav('')}>Question Portal</div>
     <div onClick={()=>nav('')}>History</div>
   </aside>

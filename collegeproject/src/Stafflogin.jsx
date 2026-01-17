@@ -11,7 +11,9 @@ const Stafflogin=()=>{
 
     const stafflogin= async()=>{
 
-        const api= await axios.post('',mail,password);
+        const api= await axios.post('',{params :{
+          email:mail,
+          password:password}});
         const val=api.data;
         console.log(val);
         nav('/')
@@ -105,7 +107,10 @@ const Stafflogin=()=>{
     <div className="login-form">
         <h3>STAFF LOGIN FORM</h3>
       <label htmlFor="email">Email</label>
-      <input id="email" type="email" placeholder="abc@gmail.com" onChange={(e)=>setMail(e.target.value)} />
+      <input id="email" type="email" placeholder="abc@gmail.com" onChange={(e)=>{
+        setMail(e.target.value);
+        console.log(mail);
+      }} />
       <label htmlFor="password">Password</label>
       <input id="password" type="password" onChange={(e)=>setPass(e.target.value)} />
       <button onClick={stafflogin}>Login</button>

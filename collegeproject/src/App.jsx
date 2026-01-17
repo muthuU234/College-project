@@ -3,6 +3,8 @@ import Stafflogin from "./Stafflogin";
 import Studentlogin from "./Studentlogin";
 import StaffDashboard from "./StaffDashboard";
 import Addstudent from "./Addstudent";
+import Task from "./Task";
+import Analysis from "./Analysis";
 function App(){
 
   const route=createBrowserRouter([
@@ -25,6 +27,8 @@ function App(){
       children:[
           { index: true, element: <div>Dashboard Home</div> },
           {path:'addstudent', element:<Addstudent/>},
+          {path:'task',element:<Task/>},
+          {path:'analysis',element:<Analysis/>}
       ]
     }
 
