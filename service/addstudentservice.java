@@ -36,7 +36,7 @@ public class addstudentservice {
 	private String generateUsername(addstudentmodel student) {
 
 		String name = student.getName().replaceAll("\\s+", "").toLowerCase();
-		int year = student.getDateOfBirth().getYear();
+		int year = student.getDob().getYear();
 
 		return name + year;
 	}
@@ -46,7 +46,7 @@ public class addstudentservice {
 		String namePart = student.getName().substring(0, 3).toLowerCase();
 		String mobile = student.getMobileNo();
 		String mobilePart = mobile.substring(mobile.length() - 3);
-		int year = student.getDateOfBirth().getYear();
+		int year = student.getDob().getYear();
 
 		return namePart + mobilePart + year;
 	}
@@ -65,8 +65,4 @@ public class addstudentservice {
 		mailSender.send(message);
 	}
 
-	public addstudentmodel addstudentmodel(addstudentmodel student) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

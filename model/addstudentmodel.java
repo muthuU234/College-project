@@ -22,27 +22,19 @@ public class addstudentmodel {
 	@Column(unique = true)
 	private String email;
 
-	@Column(length = 10)
+	@Column(name = "mobile_no", length = 10)
 	private String mobileNo;
 
-	@Column(length = 10)
+	@Column(length = 10, name = "parent_mobile_no")
 	private String parentMobileNo;
 
 	private String course;
 
-	// Constructors
-	public addstudentmodel() {
-	}
+//	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+//	@Column(name = "dob", nullable = false)
+	@Column(name = "dob")
+	private LocalDate dob;
 
-	public addstudentmodel(String name, String email, String mobileNo, String parentMobileNo, String course) {
-		this.name = name;
-		this.email = email;
-		this.mobileNo = mobileNo;
-		this.parentMobileNo = parentMobileNo;
-		this.course = course;
-	}
-
-	// Getters and Setters
 	public Long getId() {
 		return id;
 	}
@@ -91,8 +83,26 @@ public class addstudentmodel {
 		this.course = course;
 	}
 
-	public LocalDate getDateOfBirth() {
-		// TODO Auto-generated method stub
-		return null;
+	public LocalDate getDob() {
+		return dob;
 	}
+
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
+	}
+
+	// Constructors
+	public addstudentmodel() {
+	}
+
+	public addstudentmodel(String name, String email, String mobileNo, String parentMobileNo, String course) {
+		this.name = name;
+		this.email = email;
+		this.mobileNo = mobileNo;
+		this.parentMobileNo = parentMobileNo;
+		this.course = course;
+	}
+
+	// Getters and Setters
+
 }

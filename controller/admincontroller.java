@@ -1,5 +1,7 @@
 package com.example.varun.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,18 +26,23 @@ public class admincontroller {
 	private grouprepository groupRepo;
 
 	@PostMapping("/add-question/{groupName}")
-	public String addQuestion(@PathVariable String groupName, @RequestBody mcqquestionmodel q) {
+	public String addQuestion(@PathVariable long groupId, @RequestBody mcqquestionmodel q) {
 
-		groupmodel group = groupRepo.findByGroupName(groupName);
-		if (group == null) {
-			group = new groupmodel();
-			group.setGroupName(groupName);
-			group = groupRepo.save(group);
+		Optional<groupmodel> grp = groupRepo.findById(groupId);
+		if (grp.isPresent()) {
+
 		}
-
-		q.setGroup(group);
-		questionRepo.save(q);
+//		groupmodel group = groupRepo.findByGroupName(groupName);
+//		if (group == null) {
+//			group = new groupmodel();
+//			group.setGroupName(groupName);
+//			group = groupRepo.save(group);
+//		}
+//
+//		q.setGroup(group);
+//		questionRepo.save(q);
 
 		return "Question added successfully";
 	}
+
 }

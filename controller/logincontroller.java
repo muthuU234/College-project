@@ -1,5 +1,6 @@
 package com.example.varun.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -26,6 +27,17 @@ public class logincontroller {
 	public String signup(@RequestBody loginmodel user) {
 		loginservice.register(user);
 		return "User registered successfully";
+	}
+
+	@PostMapping("/stafflogin")
+	public ResponseEntity<?> staffLogin(@RequestParam String email, @RequestParam String password) {
+		boolean success = loginservice.login(email, password);
+		if (success) {
+			return ResponseEntity.status(200).body("LOgin Successfull");
+		} else {
+			return ResponseEntity.status(200).body("User not valid so login failed...");
+
+		}
 	}
 
 	@PostMapping("/login")
