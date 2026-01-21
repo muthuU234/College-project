@@ -5,6 +5,7 @@ import StaffDashboard from "./StaffDashboard";
 import Addstudent from "./Addstudent";
 import Task from "./Task";
 import Analysis from "./Analysis";
+import QuizPortal from "./QuizPortal";
 function App(){
 
   const route=createBrowserRouter([
@@ -28,7 +29,8 @@ function App(){
           { index: true, element: <div>Dashboard Home</div> },
           {path:'addstudent', element:<Addstudent/>},
           {path:'task',element:<Task/>},
-          {path:'analysis',element:<Analysis/>}
+          {path:'analysis',element:<Analysis/>},
+          {path:'quiz', element:<QuizPortal/>}
       ]
     }
 
