@@ -33,7 +33,7 @@ public class logincontroller {
 	public ResponseEntity<?> staffLogin(@RequestParam String email, @RequestParam String password) {
 		boolean success = loginservice.login(email, password);
 		if (success) {
-			return ResponseEntity.status(200).body("LOgin Successfull");
+			return ResponseEntity.status(200).body("Login Successfull");
 		} else {
 			return ResponseEntity.status(200).body("User not valid so login failed...");
 

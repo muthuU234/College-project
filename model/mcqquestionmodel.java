@@ -15,6 +15,20 @@ public class mcqquestionmodel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	private String question;
+
+	private String optionA;
+	private String optionB;
+	private String optionC;
+	private String optionD;
+
+	private String correctOption;
+
+	private int timeLimitSeconds = 30;
+
+	@ManyToOne
+	private groupmodel group;
+
 	public Long getId() {
 		return id;
 	}
@@ -86,19 +100,5 @@ public class mcqquestionmodel {
 	public void setGroup(groupmodel group) {
 		this.group = group;
 	}
-
-	private String question;
-
-	private String optionA;
-	private String optionB;
-	private String optionC;
-	private String optionD;
-
-	private String correctOption;
-
-	private int timeLimitSeconds = 30;
-
-	@ManyToOne
-	private groupmodel group;
 
 }
