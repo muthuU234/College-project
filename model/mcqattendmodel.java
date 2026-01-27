@@ -1,5 +1,7 @@
 package com.example.varun.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,42 +19,33 @@ public class mcqattendmodel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@ManyToOne(optional = false)
+	@ManyToOne
 	@JoinColumn(name = "student_id")
 	private addstudentmodel student;
 
-	@ManyToOne(optional = false)
+	@ManyToOne
 	@JoinColumn(name = "question_id")
 	private mcqquestionmodel question;
 
-	// attended = true means student attempted the question
-	private boolean attended = true;
+	private boolean attended;
 
-	public Long getId() {
-		return id;
-	}
+	private LocalDateTime submitTime;
+
+	private String result;
 
 	public addstudentmodel getStudent() {
 		return student;
-	}
-
-	public void setStudent(addstudentmodel student) {
-		this.student = student;
 	}
 
 	public mcqquestionmodel getQuestion() {
 		return question;
 	}
 
-	public void setQuestion(mcqquestionmodel question) {
-		this.question = question;
+	public LocalDateTime getSubmitTime() {
+		return submitTime;
 	}
 
-	public boolean isAttended() {
-		return attended;
-	}
-
-	public void setAttended(boolean attended) {
-		this.attended = attended;
+	public String getResult() {
+		return result;
 	}
 }

@@ -32,6 +32,7 @@ public class addstudentcontroller {
 	@PostMapping("/add")
 	public ResponseEntity<addstudentmodel> addStudent(@RequestBody addstudentmodel student) {
 		addstudentmodel savedStudent = studentService.addStudent(student);
+
 		return ResponseEntity.ok(savedStudent);
 	}
 }

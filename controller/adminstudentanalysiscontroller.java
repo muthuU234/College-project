@@ -66,8 +66,8 @@ public class adminstudentanalysiscontroller {
 		// 📘 Step 3: Total MCQs for the group
 		long totalQuestions = questionRepo.findByGroup_GroupId(groupId).size();
 
-		// 📝 Step 4: Attended MCQs
-		long attendedQuestions = attendanceRepo.countByStudent(student);
+		// 📝 Step 4: Attended MCQs (FIXED)
+		long attendedQuestions = attendanceRepo.countByStudentAndAttendedTrue(student);
 
 		// ❌ Step 5: Not attended
 		long notAttendedQuestions = totalQuestions - attendedQuestions;

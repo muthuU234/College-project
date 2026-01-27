@@ -15,14 +15,14 @@ import com.example.varun.service.questionhistoryservice;
 @CrossOrigin(origins = "*")
 public class questionhistorycontroller {
 
-	private final questionhistoryservice questionhistoryservice;
+	private final questionhistoryservice historyService;
 
-	public questionhistorycontroller(questionhistoryservice questionhistoryservice) {
-		this.questionhistoryservice = questionhistoryservice;
+	public questionhistorycontroller(questionhistoryservice historyService) {
+		this.historyService = historyService;
 	}
 
 	@GetMapping("/questions")
 	public List<questionhistorymodel> getPostedQuestionHistory() {
-		return questionhistoryservice.getQuestionHistory();
+		return historyService.getQuestionHistory();
 	}
 }

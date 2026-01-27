@@ -20,9 +20,7 @@ public class studentcontroller {
 
 	@GetMapping("/questions/{groupId}")
 	public List<mcqquestionmodel> getQuestions(@PathVariable Long groupId) {
-		return questionRepo.findByGroup_GroupId(groupId).stream().map(q -> {
-			q.setCorrectOption(null);
-			return q;
-		}).toList();
+		return questionRepo.findByGroup_GroupId(groupId);
 	}
+
 }

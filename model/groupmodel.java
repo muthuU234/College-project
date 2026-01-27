@@ -15,9 +15,6 @@ public class groupmodel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long groupId;
 
-	@Column(unique = true)
-	private String groupName;
-
 	public Long getGroupId() {
 		return groupId;
 	}
@@ -33,4 +30,8 @@ public class groupmodel {
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
 	}
+
+	@Column(unique = true)
+	private String groupName;
+
 }

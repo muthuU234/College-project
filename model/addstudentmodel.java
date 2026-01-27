@@ -103,6 +103,4 @@ public class addstudentmodel {
 		this.course = course;
 	}
 
-	// Getters and Setters
-
 }
