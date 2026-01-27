@@ -6,7 +6,6 @@ import Addstudent from "./Addstudent";
 import Task from "./Task";
 import Analysis from "./Analysis";
 import QuizPortal from "./QuizPortal";
-import Stfview from "./Stfview";
 function App(){
 
   const route=createBrowserRouter([
@@ -31,8 +30,7 @@ function App(){
           {path:'addstudent', element:<Addstudent/>},
           {path:'task',element:<Task/>},
           {path:'analysis',element:<Analysis/>},
-          {path:'quiz', element:<QuizPortal/>},
-          {path:'stfview',element:<Stfview/>}
+          {path:'quiz', element:<QuizPortal/>}
       ]
     }
 

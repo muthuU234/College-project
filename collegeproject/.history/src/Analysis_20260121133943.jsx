@@ -15,14 +15,13 @@ const Analysis=()=>{
     })
         
     const getApi=async ()=>{
-            const api= await axios.get('http://localhost:8082/api/admin/student',{
+            const api= await axios.get('',{
                 params:{
                     stdname:stdname,
                     number:number
                 }
             });
             const data=await api.data;
-            console.log(data);
 
             setVal(
                 {

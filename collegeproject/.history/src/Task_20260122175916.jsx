@@ -1,8 +1,16 @@
-const TaskCard=({taskname ,view,deletes})=>{
+import { useNavigate } from "react-router-dom";
 
+const Task=()=>{
+    const nav=useNavigate();
+    const view=()=>{
+        nav('/staffdash/stfview');
+    }
+    const delstd=()=>{
+
+    } 
     return(
         <>
-   <style jsx>{`
+      <style>{`
         .card {
           background: linear-gradient(145deg, #ffffff, #f0f0f0);
           border-radius: 16px;
@@ -95,9 +103,10 @@ const TaskCard=({taskname ,view,deletes})=>{
         <div className="card">
             <h3>new task</h3>
             <button onClick={view}>view</button>
-            <button onClick={deletes}>delete</button>
+            <button onClick={delstd}>delete</button>
         </div>
+        
         </>
     );
 }
-export default TaskCard;
+export default Task;

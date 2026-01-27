@@ -12,7 +12,7 @@ const Studentlogin=()=>{
         const api= await axios.post('http://localhost:8082/api/auth/login',{
           params:{
           email:email ,
-          password:password
+          password:passwordws
         }});
         const val=api.data;
         console.log(val);

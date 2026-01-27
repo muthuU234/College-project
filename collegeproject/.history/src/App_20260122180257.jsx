@@ -32,7 +32,7 @@ function App(){
           {path:'task',element:<Task/>},
           {path:'analysis',element:<Analysis/>},
           {path:'quiz', element:<QuizPortal/>},
-          {path:'stfview',element:<Stfview/>}
+          {path:'/stfview',element:<Stfview/>}
       ]
     }
 
