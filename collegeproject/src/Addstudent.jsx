@@ -332,7 +332,7 @@ const Addstudent=()=>{
 
           <div className="submit-section">
             <button type="button" className="submit-btn" onClick={callApi}>
-              Submit Application
+              Submit 
             </button>
           </div>
         </form>

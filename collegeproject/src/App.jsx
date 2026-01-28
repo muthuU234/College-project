@@ -6,9 +6,12 @@ import Addstudent from "./Addstudent";
 import Task from "./Task";
 import Analysis from "./Analysis";
 import QuizPortal from "./QuizPortal";
+// import Staffview from "./StaffView";
+import Stfview from "./Stfview";
 function App(){
 
   const route=createBrowserRouter([
+   
     {
       path:'/',
       element:<StaffDashboard/>
@@ -26,13 +29,19 @@ function App(){
       path:'/staffdash',
       element:<StaffDashboard/>,
       children:[
+
+        
           { index: true, element: <div>Dashboard Home</div> },
           {path:'addstudent', element:<Addstudent/>},
           {path:'task',element:<Task/>},
           {path:'analysis',element:<Analysis/>},
-          {path:'quiz', element:<QuizPortal/>}
+          {path:'quiz', element:<QuizPortal/>},
+          // {path:'staffview',element:<Staffview/>}
+          {path:'stfview',element:<Stfview/>}
       ]
-    }
+    },
+    
+    
 
   ])
 
