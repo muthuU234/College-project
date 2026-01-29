@@ -12,7 +12,7 @@ function Stfview() {
 //         setStudent(val);
 //         console.log(val);
 //     }
-    const addstudentsssss=async()=>{
+    const addstudent=async()=>{
             // const api=await axios.get('');
             // const values= await api.data;
             // setStudent(values);
@@ -29,7 +29,7 @@ function Stfview() {
     return(
         <>
         {student.length>=0?(<nav>
-            <button onClick={addstudentsssss}>addsssssasdswe student</button>
+            <button onClick={addstudent}>addsssssasdswe student</button>
             <table>
                 <thead>
                     <th>name</th>
